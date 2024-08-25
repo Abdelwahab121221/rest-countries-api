@@ -33,7 +33,7 @@ function Country() {
       }
     };
     get_country_data();
-  }, []);
+  }, [navigator]);
 
   return (
     <>
