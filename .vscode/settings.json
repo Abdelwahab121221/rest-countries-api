@@ -1,0 +1,5 @@
+{
+  "CodeGPT.Autocomplete.provider": "Ollama - codegemma:code",
+  "CodeGPT.Autocomplete.maxTokens": 200,
+  "CodeGPT.Autocomplete.suggestionDelay": 1000
+}

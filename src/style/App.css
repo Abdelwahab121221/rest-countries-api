@@ -1,0 +1,324 @@
+:root {
+  /* Light Mode Text */
+  --text: hsl(200, 15%, 8%);
+  /* Light Mode Input */
+  --Dark-Gray: hsl(0, 0%, 52%);
+  /* Light Mode Background */
+  --background: hsl(0, 0%, 98%);
+  /* Dark Mode Text & Light Mode Elements */
+  --Elements: hsl(0, 0%, 100%);
+}
+.dark {
+  --Elements: hsl(209, 23%, 22%);
+  --background: hsl(207, 26%, 17%);
+  --text: white;
+}
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+input {
+  outline: none;
+  border: none;
+}
+ul {
+  list-style: none;
+}
+/* start header */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 5%;
+  color: var(--text);
+  align-items: center;
+  box-shadow: 0px -4px 5px 1px;
+  position: relative;
+  background-color: var(--background);
+}
+header h1 {
+  font-weight: bold;
+  margin: 10px 0;
+}
+header .dark {
+  font-size: 20px;
+  cursor: pointer;
+}
+header .dark i {
+  margin-right: 5px;
+}
+@media (max-width: 767px) {
+  header {
+  }
+  header h1 {
+    font-size: 20px;
+  }
+  header .dark {
+    font-size: 16px;
+  }
+}
+/* end header */
+/* start content */
+.content {
+  flex: 1;
+}
+/* end content */
+.content {
+  padding: 5%;
+}
+.content .search-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+.content .search-filter .search {
+  position: relative;
+}
+.content .search-filter .search i {
+  position: absolute;
+  font-size: 18px;
+  color: var(--Dark-Gray);
+  top: 50%;
+  transform: translate(150%, -50%);
+}
+.content .search-filter .search input {
+  padding: 10px;
+  width: 480px;
+  height: 60px;
+  background-color: var(--Elements);
+  padding-left: 15%;
+}
+.content .search-filter .search input::placeholder {
+  font-size: 18px;
+  color: var(--text);
+  transition: 0.3s;
+}
+.content .search-filter .search input:focus::placeholder {
+  opacity: 0;
+}
+.content .search-filter .filter .choose-Region {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px;
+  width: 200px;
+  background-color: var(--Elements);
+  color: var(--text);
+  transition: 0.3s;
+  border-radius: 6px;
+}
+.content .search-filter .filter .choose-Region h4 {
+  font-size: 16px;
+  margin-right: 20px;
+}
+.content .search-filter .filter .choose-Region i {
+  transform: translateY(25%);
+}
+.content .search-filter .filter ul {
+  position: absolute;
+  background-color: var(--Elements);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 20px;
+  z-index: -1;
+  transition: 0.3s;
+  width: 200px;
+}
+.content .search-filter .filter ul li {
+  cursor: pointer;
+  padding: 10px;
+  transition: 0.3s;
+}
+.content .search-filter .filter ul li:hover {
+  background-color: var(--Dark-Gray);
+}
+.content .num-countries {
+  color: var(--text);
+  margin-bottom: 30px;
+}
+.content .countries {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 80px;
+}
+.content .countries .country {
+  width: 265px;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.6s;
+  background-color: var(--Elements);
+}
+.content .countries .country:hover {
+  scale: 1.1;
+}
+.content .countries .country img {
+  width: 265px;
+  height: 160px;
+}
+.content .countries .country .text {
+  padding: 20px;
+}
+.content .countries .country .text .name {
+  font-size: 20px;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.content .countries .country .text > span {
+  font-size: 16px;
+  color: var(--text);
+  display: block;
+  margin-bottom: 10px;
+}
+.content .countries .country .text > span span {
+  color: var(--Dark-Gray);
+}
+/* Responsive */
+@media (max-width: 780px) {
+  .content .search-filter {
+    flex-direction: column;
+    align-items: start;
+  }
+  .content .search-filter .search {
+    margin-bottom: 30px;
+  }
+
+  .content .countries {
+    padding: 5%;
+  }
+  .content .countries .country {
+    width: 100%;
+  }
+  .content .countries .country img {
+    width: 100%;
+  }
+  .content .search-filter .search input {
+    width: 300px;
+    padding-left: 30%;
+  }
+}
+/* start country */
+.Country {
+  padding: 8%;
+}
+.Country .back {
+  padding: 10px 30px;
+  cursor: pointer;
+  color: var(--text);
+  background-color: var(--background);
+  box-shadow: 0px 0px 10px 0px black;
+  margin-bottom: 8%;
+  border-radius: 5px;
+  border: none;
+}
+.Country .back:hover i {
+  animation: arrow 0.5s infinite;
+}
+.Country .back i {
+  margin-right: 20px;
+}
+.Country .country-data {
+  display: flex;
+  flex-wrap: wrap;
+}
+.Country .country-data .flag {
+  margin-right: 10%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Country .country-data .flag img {
+  width: 560px;
+}
+.Country .country-data .text {
+  color: var(--text);
+  padding: 2vh 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Country .country-data .text h1 {
+  margin-bottom: 2vh;
+}
+.Country .country-data .text .details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+.Country .country-data .text .details span {
+  display: block;
+  margin-bottom: 1vh;
+}
+.Country .country-data .text .details span span {
+  display: inline-block;
+  color: var(--Dark-Gray);
+}
+.Country .country-data .text .details span span:not(:last-child)::after {
+  content: " ,";
+}
+.Country .country-data .text .borders {
+  margin-top: 2vh;
+}
+.Country .country-data .text .borders > span span {
+  background-color: var(--Elements);
+  padding: 3px 20px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px 0px black;
+  color: var(--Dark-Gray);
+  cursor: pointer;
+}
+.Country .country-data .text .borders > span span:not(:first-of-type) {
+  margin-left: 15px;
+}
+@media (max-width: 650px) {
+  .Country .country-data {
+    flex-direction: column;
+  }
+  .Country .country-data .flag {
+    margin-right: 0;
+  }
+  .Country .country-data .flag img {
+    width: 280px;
+  }
+  .Country .country-data .text .details {
+    flex-direction: column;
+  }
+  .Country .country-data .text .borders > span {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .Country .country-data .text .borders > span span:not(:first-child) {
+    margin-left: 0;
+  }
+  .Country .country-data .text .borders > span span {
+    width: fit-content;
+    flex: 1;
+    text-align: center;
+  }
+}
+/* end country */
+@keyframes arrow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
