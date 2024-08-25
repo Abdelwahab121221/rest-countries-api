@@ -124,9 +124,7 @@ function Country() {
                       <span
                         onClick={(e) => {
                           get_data_code(e).then((country_data) => {
-                            window.location.href =
-                              window.location.origin +
-                              `/${country_data.name.common}`;
+                            navigator(`/${country_data.name.common}`);
                           });
                         }}
                         key={index}

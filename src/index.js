@@ -9,9 +9,9 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" Component={App} />
-        <Route path="/:Country" Component={Country} />
-        <Route path="/error" Component={NotFound} />
+        <Route path="/" element={<App />} />
+        <Route path="/:Country" element={<Country />} />
+        <Route path="/error" element={<NotFound />} />
       </Routes>
     </Router>
   </React.StrictMode>
